@@ -1,0 +1,125 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    line-height: 1.3rem;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    background-color: hsl(204, 43%, 93%);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "section-1 section-1"
+        "section-2 section-3";
+    height: 50%;
+    width: 70%;
+    max-width: 700px;
+    margin: 60px auto;
+}
+
+.section-1 {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    padding: 40px 40px;
+    background-color: white;
+    grid-area: section-1;
+}
+
+.section-1 h2 {
+    color: hsl(179, 62%, 43%);
+}
+
+.section-1 h3 {
+    color: hsl(71, 73%, 54%);
+}
+
+.section-1 p {
+    color: hsl(218, 22%, 67%);
+}
+
+.section-2 {
+    padding: 10px 40px;
+    background-color: hsl(179, 60%, 38%);
+    color: white;
+    grid-area: section-2;
+    font-weight: 200;
+    border-bottom-left-radius: 7px;
+}
+
+.section-2 span {
+    color: hsl(204, 43%, 93%);
+    font-size: small;
+    vertical-align: middle;
+    font-weight: 200;
+}
+
+.section-2 button {
+    background-color: hsl(71, 73%, 54%);
+    border: none;
+    color: white;
+    width: 90%;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+
+.section-2 button:hover {
+    background-color: hsl(71, 75%, 60%);
+}
+
+.section-2 button:active {
+    background-color: hsl(71, 63%, 48%);
+}
+
+.section-3 {
+    padding: 10px 40px;
+    background-color: hsl(179, 62%, 43%);
+    grid-area: section-3;
+    color: white;
+    border-bottom-right-radius: 7px;
+}
+
+.section-3 p {
+    color: hsl(204, 43%, 93%);
+    font-weight: 200;
+    line-height: 1.5rem;
+
+}
+
+@media (max-width: 700px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "section-1"
+            "section-2"
+            "section-3";
+    }
+
+    .section-2, .section-3 {
+        padding: 30px 60px;
+        border-bottom-left-radius: 0;
+    }
+
+    .section-3 {
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+    }
+}
